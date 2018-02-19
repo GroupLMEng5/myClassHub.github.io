@@ -1,7 +1,7 @@
  
 <!DOCTYPE html>
 <html>
-<title>Mathematics</title>
+<title>Mathematics 1M</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -34,6 +34,195 @@ body {font-size:16px;
     .mySidebar{
         background-color: #286D9E;
     }
+    .collapsible {
+    background-color: lightsteelblue;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: white;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+}
+    .portlet {
+    margin-bottom: 15px;
+}
+
+.btn-white {
+    border-color: #cccccc;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.portlet {
+    border: 1px solid;
+}
+
+.portlet .portlet-heading {
+    padding: 0 15px;
+}
+
+.portlet .portlet-heading h4 {
+    padding: 1px 0;
+    font-size: 16px;
+}
+
+.portlet .portlet-heading a {
+    color: #fff;
+}
+
+.portlet .portlet-heading a:hover,
+.portlet .portlet-heading a:active,
+.portlet .portlet-heading a:focus {
+    outline: none;
+}
+
+.portlet .portlet-widgets .dropdown-menu a {
+    color: #333;
+}
+
+.portlet .portlet-widgets ul.dropdown-menu {
+    min-width: 0;
+}
+
+.portlet .portlet-heading .portlet-title {
+    float: left;
+}
+
+.portlet .portlet-heading .portlet-title h4 {
+    margin: 10px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets {
+    float: right;
+    margin: 8px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets .tabbed-portlets {
+    display: inline;
+}
+
+.portlet .portlet-heading .portlet-widgets .divider {
+    margin: 0 5px;
+}
+
+.portlet .portlet-body {
+    padding: 15px;
+    background: #fff;
+}
+
+.portlet .portlet-footer {
+    padding: 10px 15px;
+    background: #e0e7e8;
+}
+
+.portlet .portlet-footer ul {
+    margin: 0;
+}
+
+.portlet-green,
+.portlet-green>.portlet-heading {
+    border-color: #16a085;
+}
+
+.portlet-green>.portlet-heading {
+    color: #fff;
+    background-color: #16a085;
+}
+
+.portlet-orange,
+.portlet-orange>.portlet-heading {
+    border-color: #f39c12;
+}
+
+.portlet-orange>.portlet-heading {
+    color: #fff;
+    background-color: #f39c12;
+}
+
+.portlet-blue,
+.portlet-blue>.portlet-heading {
+    border-color: #2980b9;
+}
+
+.portlet-blue>.portlet-heading {
+    color: #fff;
+    background-color: #2980b9;
+}
+
+.portlet-red,
+.portlet-red>.portlet-heading {
+    border-color: #e74c3c;
+}
+
+.portlet-red>.portlet-heading {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+.portlet-purple,
+.portlet-purple>.portlet-heading {
+    border-color: #8e44ad;
+}
+
+.portlet-purple>.portlet-heading {
+    color: #fff;
+    background-color: #8e44ad;
+}
+
+.portlet-default,
+.portlet-dark-blue,
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    border-color: #34495e;
+}
+
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    color: #fff;
+    background-color: #34495e;
+}
+
+.portlet-basic,
+.portlet-basic>.portlet-heading {
+    border-color: #333;
+}
+
+.portlet-basic>.portlet-heading {
+    border-bottom: 1px solid #333;
+    color: #333;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    .portlet {
+        margin-bottom: 30px;
+    }
+}
+
+.text-green {
+    color: #16a085;
+}
+
+.text-orange {
+    color: #f39c12;
+}
+
+.text-red {
+    color: #e74c3c;
+}   
 </style>
 <body>
 
@@ -51,6 +240,7 @@ body {font-size:16px;
     <a href="#Continuity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Continuity</a> 
     <a href="#Resources" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resources</a>
     <a href="#Have Your Say" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Have Your Say</a>
+      <a href="#Comments" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Comments</a>
   </div>
 </nav>
 
@@ -70,7 +260,7 @@ body {font-size:16px;
   <div class="jumbotron" style="text-align:center;font-size:48px">
      
    
-      <p>ME117 - Mathematics</p>
+      <p>MM117 - Mathematics 1M</p>
    
     </div>
   
@@ -101,44 +291,187 @@ body {font-size:16px;
   
   <!-- Designers -->
   <div class="w3-container" id="Difficulty" style="margin-top:75px">
-    <h1 class="w3-xxlarge w3-text-dark-grey "><b>Difficulty</b></h1>
-    
-      <p>Data about difficulty</p>
-  </div>
-
   
-    
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Packages / Pricing Tables -->
-  <div class="w3-container" id="Assessment Structure" style="margin-top:75px">
-    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Assessment Structure</b></h1>
-    
-    <p>Data About assessment structure</p>
-  </div>
-
- 
-  
-  <!-- Contact -->
-  <div class="w3-container" id="Continuity" style="margin-top:75px">
-    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Continuity</b></h1>
-    
-    <p>Data about continuity</p>
-     
-  </div>
-     <div class="w3-container" id="Resources" style="margin-top:75px">
-    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Resources</b></h1>
-    
-    <p>Data About resources</p>
-  </div>
-<div class="w3-container" id="Have Your Say" style="margin-top:75px">
-    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Have Your Say</b></h1>
-    
-    <a href="https://docs.google.com/forms/d/1lz0KRz2Ppf6Cg9ObpVfETR2WfZO075N8cdxDiPPOiy4/edit" target="_blank" > Take the Survey </a>
-  </div>
-
+<button class="collapsible" style="width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Difficulty</b></h1></button>
+<div class="content">
+  <p><i>
+- "As I studied Adv Higher Maths I didn't have trouble with this class.
+The class wasn't all that hard to follow as all of the required information was covered in the lectures. The tutorials were compulsory, and the down fall of them was that the questions given tended to be far easier than the ones in the exams."<BR><BR>
+- "This class was somewhat difficult due to the new methods we were using. I found that during A-Level maths, we covered a lot of the same topics however in MAthematics 1m, they were covered in much greater detail and I had to adjust to a whole new approach to these sort of questions. The tutorials were compulsory and did reflect well on the examples we had covered in class. The assignments were quite difficult and prepared us well for the exams in both december and may."<BR><BR>
+- "Adequately challenging with appropriate tutorials that helped with revision. The lectures were also easy to follow and there was a good system with the class tests."<BR><BR>
+</i>
+      
+Most students found this class of a fair standard of difficulty.  Those students who had taken Advanced Higher Maths at school found that there was a significant overlap in the topics covered and therefore handled it better than those who hadn’t.  Students who had studied A-Level maths found the same overlap but with the topics covered in much greater detail and often with a differing approach or question strategy.
+</p>
 </div>
 
 
+
+
+      
+      
+    
+      
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="Assessment Structure" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -15px; width: 900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Assessment Structure</b></h1></button>
+<div class="content">
+  <p><i>- "I liked the option of not having to do the final year exam if you scored high on the class tests. This made me do more revision on the class tests. I think there was a good amount of tests."<BR><BR>
+- "Regular assessment was useful to keep learning going, and allowed exemption from the final exam which is always sweet <BR><BR>
+- "Tiny steps make a huge step."<BR><BR> 
+      </i>
+      
+Students generally were very pleased with the assessment, consisting of four class tests throughout the year.  This regular assessment assisted with learning the content and encouraged students to not let themselves fall behind with the class workload.  The option to be exempt from the final exam should a high enough grade be achieved in these tests was available and provided additional motivation.<BR><BR>
+</p>
+</div>
+
+
+
+
+
+ 
+  
+  <!-- Have your say -->
+  <div class="w3-container" id="Continuity" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -30px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Continuity</b></h1></button>
+<div class="content">
+  <p><i>- "This class has been very helpful in other subjects. It taught the basics of mathematics, which could then be applied in classes such as Mechanics and Heat and Flow." <BR><BR>
+- "Maths is used in almost every subject, it has been very helpful across all areas" <BR><BR>
+- "The skills we learned in this class helped a lot with a couple of my other modules, particularly MATLAB (matrices) and the kinematics part of the course. I felt as though I had a general understanding of the topics covered, and was able to further develop my knowledge and skill set when dealing with these problems." <BR><BR>
+- "Maths is the basis of all the classes, so it is very necessary in all applications."<BR><BR>
+      </i>
+      
+This class was found to be extremely relevant by all students.  The majority of all classes studied throughout the degree will involve some element of mathematics.  This high degree of continuity provided another motivating factor to students as full comprehension of the content from this class would prove fundamental to success throughout the degree.<BR><BR>
+</p>
+  </div>
+     <div class="w3-container" id="Resources" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -45px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Resources</b></h1></button>
+<div class="content">
+  <p><i>- "Good range of materials provided plus maths skills support was a huge help" <BR><BR>
+- "Good Tutorials, lectures were too fast paced but plenty other resources to use" <BR><BR>
+- "The material was sufficient" <BR><BR> 
+- "Good amount of help available and a variety of revision material." <BR><BR>
+</i>
+      
+Students were very satisfied with the material provided for the class as it was well structured and had a good variety of content to tackle the class <BR><BR>
+</p>
+  </div>
+<div class="w3-container" id="Have Your Say" style="margin-top:75px; text-align: right;">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Have Your Say</b></h1>
+    
+    <a href="https://goo.gl/forms/TL7mHII6CMQV8Wfj1" target="_blank" > Take the Survey </a>
+  </div>
+
+</div>
+<div class="w3-container" id="Comments" style="margin-top:75px; text-align: left;">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Comments</b></h1>
+    
+    <a href="https://docs.google.com/forms/d/1lz0KRz2Ppf6Cg9ObpVfETR2WfZO075N8cdxDiPPOiy4/edit" target="_blank" > Please ask any questions below </a>
+  </div>
+
+</div>
+     <div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="portlet portlet-default">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h4><i class="fa fa-circle text-green"></i> khdcds</h4>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                </div>
+                <div id="chat" class="panel-collapse collapse in">
+                    <div>
+                    <div class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="text-center text-muted small">January 1, 2014 at 12:23 PM</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:23 PM</span>
+                                        </h4>
+                                        <p>'Comment'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:28 PM</span>
+                                        </h4>
+                                        <p>'reply'</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:39 PM</span>
+                                        </h4>
+                                        <p>'reply'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    </div>
+                    <div class="portlet-footer">
+                        <form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Enter message..." style="width:500px;height:100px":></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default pull-right">Send</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+</div>  
+      
 <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -158,7 +491,25 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-</script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
+  
+   
+</script>
+     
+
+      
 </body>
 </html>
