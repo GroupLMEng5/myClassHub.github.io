@@ -1,0 +1,598 @@
+ 
+<!DOCTYPE html>
+<html>
+<title>Individual Project - ME409</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px; 
+    
+    background-color:white}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+    .w3-bar-block{
+        background-color: #286D9E;
+        color: white;
+        
+    }
+    .w3-jumbo{ background-color: #286D9E;
+        
+    }
+    .header{
+        background-color: #dark-grey;
+        color: black;
+        
+    }
+    .w3-container{
+        background-color: #white;
+        color: dark-grey;
+            
+    }
+    .mySidebar{
+        background-color: #286D9E;
+    }
+    .collapsible {
+    background-color: lightsteelblue;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: white;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+}
+    .portlet {
+    margin-bottom: 15px;
+}
+
+.btn-white {
+    border-color: #cccccc;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.portlet {
+    border: 1px solid;
+}
+
+.portlet .portlet-heading {
+    padding: 0 15px;
+}
+
+.portlet .portlet-heading h4 {
+    padding: 1px 0;
+    font-size: 16px;
+}
+
+.portlet .portlet-heading a {
+    color: #fff;
+}
+
+.portlet .portlet-heading a:hover,
+.portlet .portlet-heading a:active,
+.portlet .portlet-heading a:focus {
+    outline: none;
+}
+
+.portlet .portlet-widgets .dropdown-menu a {
+    color: #333;
+}
+
+.portlet .portlet-widgets ul.dropdown-menu {
+    min-width: 0;
+}
+
+.portlet .portlet-heading .portlet-title {
+    float: left;
+}
+
+.portlet .portlet-heading .portlet-title h4 {
+    margin: 10px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets {
+    float: right;
+    margin: 8px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets .tabbed-portlets {
+    display: inline;
+}
+
+.portlet .portlet-heading .portlet-widgets .divider {
+    margin: 0 5px;
+}
+
+.portlet .portlet-body {
+    padding: 15px;
+    background: #fff;
+}
+
+.portlet .portlet-footer {
+    padding: 10px 15px;
+    background: #e0e7e8;
+}
+
+.portlet .portlet-footer ul {
+    margin: 0;
+}
+
+.portlet-green,
+.portlet-green>.portlet-heading {
+    border-color: #16a085;
+}
+
+.portlet-green>.portlet-heading {
+    color: #fff;
+    background-color: #16a085;
+}
+
+.portlet-orange,
+.portlet-orange>.portlet-heading {
+    border-color: #f39c12;
+}
+
+.portlet-orange>.portlet-heading {
+    color: #fff;
+    background-color: #f39c12;
+}
+
+.portlet-blue,
+.portlet-blue>.portlet-heading {
+    border-color: #2980b9;
+}
+
+.portlet-blue>.portlet-heading {
+    color: #fff;
+    background-color: #2980b9;
+}
+
+.portlet-red,
+.portlet-red>.portlet-heading {
+    border-color: #e74c3c;
+}
+
+.portlet-red>.portlet-heading {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+.portlet-purple,
+.portlet-purple>.portlet-heading {
+    border-color: #8e44ad;
+}
+
+.portlet-purple>.portlet-heading {
+    color: #fff;
+    background-color: #8e44ad;
+}
+
+.portlet-default,
+.portlet-dark-blue,
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    border-color: #34495e;
+}
+
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    color: #fff;
+    background-color: #34495e;
+}
+
+.portlet-basic,
+.portlet-basic>.portlet-heading {
+    border-color: #333;
+}
+
+.portlet-basic>.portlet-heading {
+    border-bottom: 1px solid #333;
+    color: #333;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    .portlet {
+        margin-bottom: 30px;
+    }
+}
+
+.text-green {
+    color: #16a085;
+}
+
+.text-orange {
+    color: #f39c12;
+}
+
+.text-red {
+    color: #e74c3c;
+}   
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;background-color:#0078ae" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px;font-color:#002B5C">Close Menu</a>
+  <div class="w3-container">
+      <h3><a href="index.html"> <span class="glyphicon glyphicon-home"></span></a> </h3>
+  </div>
+  <div class="w3-bar-block" style="background-color: #0078ae">
+      <a href="index.html"><span class="glyphicon glyphicon-home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"></span>Home</a> 
+    <a href="#Summary" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Summary</a> 
+    <a href="#Difficulty" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Difficulty</a> 
+    <a href="#Assessment Structure" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Assessment Structure</a> 
+    <a href="#Continuity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Continuity</a> 
+    <a href="#Resources" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resources</a>
+       <a href="#Project Summary" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Project Summary</a>
+    <a href="#Have Your Say" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Have Your Say</a>
+      <a href="#Comments" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Comments</a>
+  </div>
+</nav>
+
+<header class="w3-container w3-top w3-hide-large w3-# w3-xlarge w3-padding" style="background-color: lightgray;">
+  <a href="javascript:void(0)" class="w3-button w3-#286D9E w3-margin-right" onclick="w3_open()">☰</a>
+  <span>ME409</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px;margin-right:0px">
+
+  <!-- Header -->
+ 
+  <div class="jumbotron" style="text-align:center;font-size:48px">
+     
+   
+      <p>ME409 - Individual Project</p>
+   
+    </div>
+  
+
+  <div class="w3-row-padding">
+    <div class="w3-half">
+    </div>
+
+    <div class="w3-half">
+    </div>
+  </div>
+
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="Summary" style="margin-top:75px; margin:0px">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Summary</b></h1>
+    
+    <p>The 4th year project and its difficulty, material, relevance and supervisor input are highly subjective and vary significantly between projects.  They all require a substantial amount of time to be dedicated as should be expected with a dissertation which contributes the majority of the grade for the year.  Some projects have strictly set targets and milestones throughout, particularly if they have been sponsored by industry, however the majority are left up to you to take it where you want.  These projects allow the difficulty level and final product of the project to be assigned by yourself and generally you are rewarded by the volume of work that you commit.  All projects involve a literary review of the background theory associated with your project which may be a new writing and format style to many engineering students so appropriate research into this will assist in completing this section of the report.   <BR><BR>
+
+The overall body of work for each project is expected to be an advancement in the field however this should not intimidate students as your supervisor will typically guide you on the standard of work that is expected.  There is a huge range of topics within many fields of engineering with some being highly technical or software based and some being more of a research project.  The assessment is broken down into an interim, technical and final written reports with 2 oral assessments also included.  This structure was found to be a thorough assessment of the amount and quality of your work with the oral assessments providing assessment in an interview-based platform.   It is a highly useful project in terms of gaining skills relevant to working in industry and improving your ability to meet set targets and deadlines. 
+<BR><BR>
+    Difficulty - 7.3<BR>
+Overall Satisfaction (including material, assignments, relevance) - 7.7
+
+    </p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="Difficulty" style="margin-top:75px">
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<button class="collapsible" style="width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Difficulty</b></h1></button>
+<div class="content">
+  <p><i>
+ - "The project difficulty came from understanding of basic principles and software." <BR><BR>
+- "It was challenging but rewarding " <BR><BR>
+- "Quite difficult overall as I was fairly over-ambitious in what could be achieved within the scope of the project. Extremely time consuming as a result but very useful learning experience" <BR><BR>
+- "A challenging level equivalent to a fourth year degree. Volume of work sufficient and suitable help given by academics and class registrar. " <BR><BR>
+- "I found the project challenging due to factors out of my control. In terms of writing the technical paper and dissertation, once I had discussed what was required from each of these and their formats with my supervisor, I understood what was required a lot more. Before that though there was very little in terms of explaining what exactly a dissertation consists of. I had to learn the correct way to write a Literature Review but I felt well prepared for the Technical Paper as it was in a similar format to reports and courseworks written throughout the course." <BR><BR>
+      </i>
+
+
+
+</p>
+</div>
+
+
+
+
+      
+      
+    
+      
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="Assessment Structure" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -15px; width: 900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Assessment Structure</b></h1></button>
+<div class="content">
+  <p><i>- "The assessment was good and I enjoyed that it was split into several sections." <BR><BR>
+- "The Oral examinations provided excellent feedback from outside sources and steered me in the right direction" <BR><BR>
+- "Arrangement of two oral exams before final submissions was very fair and appropriate from a professional development standpoint. Didn't get the feeling that my technical paper had been read before my second oral exam however. Marking scheme was clearly defined and feedback on final thesis was useful." <BR><BR>
+- "Assessment structure seems well thought out and designed. Difficult to do badly if you put in the work." <BR><BR>
+- "The assessments all the way through that let you gauge your progress." <BR><BR>
+- "I learnt most of the information about my topic from reading relevant journals, textbooks and papers. My supervisor gave me a rough explanation and what I needed to do but left it up to me to educate myself on the topic. I felt like my supervisor helped me feel prepared for the interim and final oral assessments by checking my knowledge and letting me know the kind of questions that might be asked. I felt like I spent a large portion of my week in the lab working on my project, it was as much as I expected as I was prepared for this to be a large part of 4th year." <BR><BR>
+      </i>
+
+</p>
+</div>
+
+
+
+
+
+ 
+  
+  <!-- Have your say -->
+  <div class="w3-container" id="Continuity" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -30px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Continuity</b></h1></button>
+<div class="content">
+  <p><i> - "Project seems more relevant to my 5th classes." <BR><BR>
+- "Used software previously used in classes, and gained knowledge that has been applicable to both my 5th year project and personal projects" <BR><BR>
+- "Probably most useful 'class' undertaken in fourth year in terms of gaining useful skills. Required a great deal of knowledge and techniques learned from previous classes although some form of previous programming knowledge would have been extremely useful" <BR><BR>
+- "Not much relevance in the subject matter, but the project management skills are useful for the fifth year project.
+The whole degree prepared me to do my 4th year project. I used software that i used before. Yes, I am comfortable writing a report and how to plan any project." <BR><BR> 
+- "Learned more MATLAB skills and learned an interesting volume of knowledge about the topic of interest. Presentation skills very useful this year. " <BR><BR>
+      - "I was not prepared for this beforehand. I did not need to use any software that I had used before, the software I used was specific to the machine I was using in the lab and I was taught this when I needed to use it. I had to learn how to use a 3D printer. The skills I used for 4th year project are not transferable to my 5th year project, but I'm glad I now know how to use a 3D printer. This class is relevant as we now know how to handle a full project by ourselves and how to make timing plans, take notes from meetings and how to track progress so that final report are easier to write. " <BR><BR> </i>
+
+
+</p>
+  </div>
+      <div class="w3-container" id="Project Summary" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -45px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Project Summary</b></h1></button>
+<div class="content">
+  <p> - This section contains summarys of projects that have been completed by students in previous years. 
+    <h3>“Investigation of the Viability of Energy-Related Service Delivery Based on Pervasive Sensing”</h3>
+<BR><BR>
+
+The main work of my dissertation was to look at the applications of ‘eServices’ and the Internet of Things in the delivery and use of energy, mainly in the domestic setting. My dissertation was mainly research based, so a lot of my time was spent reading research papers on similar topics. All of the papers were available online through the library. As well as this, there was a technical aspect to my dissertation. The technical aspect mainly comprised of using a software called Entrak, which I had no previous knowledge of, that was provided to me and I was taught how to use it by my supervisor and a research assistant from the department. 
+<BR><BR>
+The main body of my dissertation comprised of a literary review of the papers that I found. This work was not too difficult; it just took a lot of time. As part of my dissertation, I decided to come up with some example eServices and talk through how they would work, what equipment would be necessary, what advantages they would have etc.  As well as this, I took one of these examples and created a prototype of the eService. The aim of the service was to create an alarm that would be triggered when an inhabited room dropped below a certain temperature – acting as a hypothermia prevention system. I made a setup, which I ran in my bedroom, that comprised of a couple of temperature/motion sensors as well as some other equipment that was provided by the department. This data was logged through a software called Entrak, which at the time was a software that was being developed by the department in conjunction with another university. 
+<BR><BR>
+My dissertation was slightly unusual, in that it was slightly less technical than a lot of the others. I felt that I did not use a lot of knowledge from previous classes, however the class run by my supervisor in 4th year did cover some very similar topics. 
+I met with my supervisor about every 2/3 weeks. The idea of these meetings was to have them ‘regularly but not often’. I felt that this suited me because they acted more as progress reports, following the structure of ‘what work have I done, what work am I currently doing and what work will I be doing next’. My supervisor was generally uninvolved with the direction my project took, but gave me a couple of hints or suggestions for things for me to consider, always letting me come to my own conclusions. As I mentioned, the department helped me with things that I had no prior knowledge of such as setting up equipment and using the Entrak software. 
+<BR><BR>
+My advice would be:
+-Start early, as a lot of the initial background reading takes a lot of time. By doing this you can build up a ‘vocabulary’ on the topic, which makes planning your project and communicating with your supervisor much easier.
+-Develop a plan for the year using a Gantt chart (or similar). Even if it is simple or changes a lot, it’ll make the work load seem more manageable and let you feel more in control of the project. It will also look very good to your supervisor/assessors.  
+-Look at it more as a big coursework. Personally I found the fact it was called a dissertation made it feel more daunting.  
+<BR><BR>
+    <h3>    "An investigation of the test load frequency effect on corrosion fatigue of low carbon steel. " </h3>
+    <BR><BR>
+
+The aim of my project was to investigate the effects of cyclic frequency on carbon steel submerged in salt water. The carbon steel specimens were held in two grips and a cyclic force was applied at various frequencies. I had to design, 3D print and build the test chamber and design the setup of the whole experiment. Once the specimens had fractured in the saltwater I had to investigate the fracture to see if the frequency was affecting the speed or intensity of fracture. Unfortunately the machine I was using broke and so I couldn’t get as many results as I wanted. I was worried this would negatively affect my dissertation overall, however there were ways to work around this. I was able to discuss the few results I had and then hypothesise about those I had planned on getting. 
+<BR><BR>
+I met with my supervisor one a month, twice towards the end of the project. He gave me advice on how to write the Technical Report and Dissertation and the sort of information I was trying to find with my experiment. He also gave me guidance into an achievable timing plan so that I knew what to do and could stay on track. Apart from that I emailed if I needed anything urgently but we did not constantly keep in contact.
+<BR><BR>
+I learnt most of the information about my topic from reading relevant journals, textbooks and papers. My supervisor gave me a rough explanation and what I needed to do but left it up to me to educate myself on the topic. He helped me feel prepared for the interim and final oral assessments by checking my knowledge and letting me know the kind of questions that might be asked.
+<BR><BR><BR><BR>
+I spent a large portion of my week in the lab working on my project, it was as much as I expected as I was prepared for this to be a large part of 4th year. The software I used was specific to the machine I was using in the lab and I was taught this when I needed to use it. I also had to learn how to use a 3D printer. 
+<BR><BR>
+The individual project is useful for the future as I learnt how to make timing plans, take notes from meetings and how to track progress so that the project stays on track. I also developed project management skills and learnt how to have a successful partnership with a ‘client’/supervisor. These skills are all useful in both general group and project work, specifically the Masters group project next year. 
+<BR><BR>
+    
+    <h3>An Experimental Investigation of a Cavitation Water Heater (i.e. Hydrosonic Pump)</h3>
+<BR><BR>
+Cavitation is generally seen as a phenomenon that engineer should avoid, however, there exists some studies suggesting that cavitation can be successfully and efficiently applied within industrial applications. Cavitation includes the creation, growth and succeeding collapse of cavities (vapour gaps) which transpire in particularly small intermissions (milliseconds) and discharge great amounts of thermal energy.
+<BR><BR>
+The aim of my project was to complete the manufacture of a partially-completed cavitation water heater (hydrosonic pump) and its testing rig. Thereafter, experiments were to be carried out in attempt to gain a greater understanding of the possible uses for hydrodynamic cavitation within industry. 
+<BR><BR>
+The testing rig was instrumented with devices to measure the temperatures and pressures of the fluid at various points and the rotational speed of the shaft, which powered the impeller. Hydrodynamic cavitation lacks experimental testing and results, therefore, I was required to carry out many tests at varying operating conditions to analyse how efficient the device was at recovering the mechanical input energy in terms of thermal (heat) energy. As well as implementing many different operating conditions, various impellers were tested to examine if the geometry of the impellers had an effect on cavitation generation. 
+<BR><BR>
+I met with my supervisor regularly and sent a four-note every two weeks. A four-note is essentially an insight to your project progress which includes the work completed this section, the work to complete next section, any problems which you have came across and any help which might be required over the next section. For me, the best part about the project was the amount of time I spent performing experiments - it's a very hands-on project!
+<BR><BR>
+My advice is to make sure you start your thesis writing early in first semester - you’ll be thankful for it during the second semester. Overall, the projects are not as bad as they first seem. As long as you put the work in you’ll get the rewards.
+<BR><BR>
+Don’t be disheartened if you do undertake an experimental project and you get results that you weren’t expecting, or even if you don’t get any results at all! Remember, this situation will give you MORE to write about in your thesis - why are the unexpected? etc.
+<BR><BR>
+The hydrosonic pump project is a very technical but rewarding one. I learnt a lot and found the whole project very interesting and intriguing. However, the project does require a lot of work, many hours in the lab and the use of the LabVIEW programme.
+<BR><BR>
+    <h3>Study of Modal Analysis of Vibrating Structures. A Numerical and Experimental Study</h3>
+    <BR><BR>
+
+The aim of my project was to carry out a modal analysis study on a steel beam 0.5m long. Modal analysis involves finding out how the structure responds to vibrations of any kind, and interpreting the response to gain the inherent properties of the structure, that is its natural frequencies, mode shapes and modal damping. These properties are useful to avoid the unwanted property of resonance, which increases the amplitude of vibrations dramatically when the forcing frequency is equal to the natural frequency, and can cause a lot of damage.
+<BR><BR>
+I met with my supervisor every fortnight and I was given a lot of support, but I wasn’t spoon-fed; I would only receive some decent advice if I had questions to ask and could show that I was progressing well. If you are not putting the work in the supervisor cannot handguide you through your project, so putting in the time during research and practical work is essential, and starting all of this early to ensure you do not fall behind is recommended. This isn’t the kind of project that you can drag your feet with as it will catch you up, and it really is up to you to put the work in.
+<BR><BR>
+Don’t let this scare you though as it can be as easy as you want it to be, if you get the work in early, writing the dissertation becomes a lot easier and you’ll have more time, so will be a lot more comfortable. Supervisors mark their own students dissertation as well, so keeping in regular contact with them will allow you to stay on the same page as them and come the end, you will have a piece of work more likely to be in line with their ideas too.
+<BR><BR>
+Overall my project involved some work on ANSYS to validate experiments, as well as some lab work to perform the modal analysis. This posed some problems but with the help of my supervisor I sorted them out, and once the data was collected quite early on, the rest of the project time involved writing the technical paper and dissertation, for which I ended up with a pretty good mark. This project was one of the easier projects I have heard about, with very little in terms of anything brand new, like programming or complicated equipment. I would recommend this project to anyone thinking about it, as it was both enjoyable and relatively easy which made 4th year that little bit less gruelling. 
+<BR><BR>
+
+</p>
+  </div>
+
+
+</div>
+     <div class="w3-container" id="Resources" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -45px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Resources</b></h1></button>
+<div class="content">
+  <p><i>- "An emphasis on developing a full understanding of the subject rather than just memorising exam questions.
+Above standard" <BR><BR>
+- "One of the best classes for material" <BR><BR>
+- "Good use of myplace, Solutions weren't available, worked examples provided in class were useful, tutorials largely matched content. " <BR><BR>
+      - "There wasn't much in the way of past papers and solutions. There were good tutorials which helped to understand the lecture information. There were worked examples in class which was the best way to understand the class content. Some were hard to follow in class but once you went over them again was helpful. " <BR><BR> </i>
+The class had good material with detailed lectures and worked examples.  These examples proved crucial to developing a full understanding of the class.  It was stressed that this was essential to achieving a high mark for the class rather than simply memorising past exam solutions.  This was vindicated in the final exam which proved to be difficult, requiring full comprehension of the concepts covered to complete. 
+
+</p>
+  </div>
+<div class="w3-container" id="Have Your Say" style="margin-top:75px; text-align: right;">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Have Your Say</b></h1>
+    
+    <a href="https://goo.gl/forms/TL7mHII6CMQV8Wfj1" target="_blank" > Take the Survey </a>
+  </div>
+
+</div>
+<div class="w3-container" id="Comments" style="margin-top:75px; text-align: left;">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Comments</b></h1>
+    
+    <a href="https://docs.google.com/forms/d/1lz0KRz2Ppf6Cg9ObpVfETR2WfZO075N8cdxDiPPOiy4/edit" target="_blank" > Please ask any questions below </a>
+  </div>
+
+</div>
+     <div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="portlet portlet-default">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h4><i class="fa fa-circle text-green"></i> khdcds</h4>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                </div>
+                <div id="chat" class="panel-collapse collapse in">
+                    <div>
+                    <div class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="text-center text-muted small">January 1, 2014 at 12:23 PM</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:23 PM</span>
+                                        </h4>
+                                        <p>'Comment'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:28 PM</span>
+                                        </h4>
+                                        <p>'reply'</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:39 PM</span>
+                                        </h4>
+                                        <p>'reply'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    </div>
+                    <div class="portlet-footer">
+                        <form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Enter message..." style="width:500px;height:100px":></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default pull-right">Send</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+</div>  
+      
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
+  
+   
+</script>
+     
+
+      
+</body>
+</html>

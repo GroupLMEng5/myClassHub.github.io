@@ -1,0 +1,521 @@
+ 
+<!DOCTYPE html>
+<html>
+<title>Computer Aided Engineering Design - 16415</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px; 
+    
+    background-color:white}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+    .w3-bar-block{
+        background-color: #286D9E;
+        color: white;
+        
+    }
+    .w3-jumbo{ background-color: #286D9E;
+        
+    }
+    .header{
+        background-color: #dark-grey;
+        color: black;
+        
+    }
+    .w3-container{
+        background-color: #white;
+        color: dark-grey;
+            
+    }
+    .mySidebar{
+        background-color: #286D9E;
+    }
+    .collapsible {
+    background-color: lightsteelblue;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: white;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+}
+    .portlet {
+    margin-bottom: 15px;
+}
+
+.btn-white {
+    border-color: #cccccc;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.portlet {
+    border: 1px solid;
+}
+
+.portlet .portlet-heading {
+    padding: 0 15px;
+}
+
+.portlet .portlet-heading h4 {
+    padding: 1px 0;
+    font-size: 16px;
+}
+
+.portlet .portlet-heading a {
+    color: #fff;
+}
+
+.portlet .portlet-heading a:hover,
+.portlet .portlet-heading a:active,
+.portlet .portlet-heading a:focus {
+    outline: none;
+}
+
+.portlet .portlet-widgets .dropdown-menu a {
+    color: #333;
+}
+
+.portlet .portlet-widgets ul.dropdown-menu {
+    min-width: 0;
+}
+
+.portlet .portlet-heading .portlet-title {
+    float: left;
+}
+
+.portlet .portlet-heading .portlet-title h4 {
+    margin: 10px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets {
+    float: right;
+    margin: 8px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets .tabbed-portlets {
+    display: inline;
+}
+
+.portlet .portlet-heading .portlet-widgets .divider {
+    margin: 0 5px;
+}
+
+.portlet .portlet-body {
+    padding: 15px;
+    background: #fff;
+}
+
+.portlet .portlet-footer {
+    padding: 10px 15px;
+    background: #e0e7e8;
+}
+
+.portlet .portlet-footer ul {
+    margin: 0;
+}
+
+.portlet-green,
+.portlet-green>.portlet-heading {
+    border-color: #16a085;
+}
+
+.portlet-green>.portlet-heading {
+    color: #fff;
+    background-color: #16a085;
+}
+
+.portlet-orange,
+.portlet-orange>.portlet-heading {
+    border-color: #f39c12;
+}
+
+.portlet-orange>.portlet-heading {
+    color: #fff;
+    background-color: #f39c12;
+}
+
+.portlet-blue,
+.portlet-blue>.portlet-heading {
+    border-color: #2980b9;
+}
+
+.portlet-blue>.portlet-heading {
+    color: #fff;
+    background-color: #2980b9;
+}
+
+.portlet-red,
+.portlet-red>.portlet-heading {
+    border-color: #e74c3c;
+}
+
+.portlet-red>.portlet-heading {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+.portlet-purple,
+.portlet-purple>.portlet-heading {
+    border-color: #8e44ad;
+}
+
+.portlet-purple>.portlet-heading {
+    color: #fff;
+    background-color: #8e44ad;
+}
+
+.portlet-default,
+.portlet-dark-blue,
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    border-color: #34495e;
+}
+
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    color: #fff;
+    background-color: #34495e;
+}
+
+.portlet-basic,
+.portlet-basic>.portlet-heading {
+    border-color: #333;
+}
+
+.portlet-basic>.portlet-heading {
+    border-bottom: 1px solid #333;
+    color: #333;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    .portlet {
+        margin-bottom: 30px;
+    }
+}
+
+.text-green {
+    color: #16a085;
+}
+
+.text-orange {
+    color: #f39c12;
+}
+
+.text-red {
+    color: #e74c3c;
+}   
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;background-color:#0078ae" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px;font-color:#002B5C">Close Menu</a>
+  <div class="w3-container">
+      <h3><a href="index.html"> <span class="glyphicon glyphicon-home"></span></a> </h3>
+  </div>
+  <div class="w3-bar-block" style="background-color: #0078ae">
+      <a href="index.html"><span class="glyphicon glyphicon-home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"></span>Home</a> 
+    <a href="#Summary" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Summary</a> 
+    <a href="#Difficulty" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Difficulty</a> 
+    <a href="#Assessment Structure" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Assessment Structure</a> 
+    <a href="#Continuity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Continuity</a> 
+    <a href="#Resources" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resources</a>
+    <a href="#Have Your Say" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Have Your Say</a>
+      <a href="#Comments" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Comments</a>
+  </div>
+</nav>
+
+<header class="w3-container w3-top w3-hide-large w3-# w3-xlarge w3-padding" style="background-color: lightgray;">
+  <a href="javascript:void(0)" class="w3-button w3-#286D9E w3-margin-right" onclick="w3_open()">☰</a>
+  <span>16415</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px;margin-right:0px">
+
+  <!-- Header -->
+ 
+  <div class="jumbotron" style="text-align:center;font-size:48px">
+     
+   
+      <p>16415 - Computer Aided Engineering Design</p>
+   
+    </div>
+  
+
+  <div class="w3-row-padding">
+    <div class="w3-half">
+    </div>
+
+    <div class="w3-half">
+    </div>
+  </div>
+
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="Summary" style="margin-top:75px; margin:0px">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Summary</b></h1>
+    
+    <p>CAED was a 20-credit class which ran over two semesters and was examined on three courseworks. Each coursework focussed on a different software: solidworks (CAD); ANSYS (FEA); and ANSYS Fluent (CFD). Each coursework was weighted equally to a total of 100% and required a design, analysis and a written report submission. The class is entirely based on software use and report-writing.
+<BR><BR>
+The students found refamiliarising themselves with the software straightforward but agreed that the courseworks were very time-consuming. For each section, some background lectures were held to reintroduce the software and cover the fundamental aspects of each analysis type. The class also included allocated lab times ran by tutors, however, the consensus was that there were not enough tutors to cater for the size of the class and working with peers was the best way to tackle the assignments.
+<BR><BR>
+Difficulty - 5.8<BR>
+Overall Satisfaction (including material, assignments, relevance) - 5.9
+
+    </p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="Difficulty" style="margin-top:75px">
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<button class="collapsible" style="width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Difficulty</b></h1></button>
+<div class="content">
+  <p><i>
+- "Easy to grasp based on CAD/FEA skills" <BR><BR>
+- "Built upon skills previously gained in previous years. Coursework wasn't difficult; but the time it took was far too much for a 20 credit class. Think I ended up spending more time on that Creo coursework than on my dissertation in the end" <BR><BR>
+- "Not hugely difficult, but very time-consuming" <BR><BR> 
+      </i>
+
+      The difficulty level of the class was not high but the time required to be dedicated to it was.  The course involves three separate courseworks which utilised various software to carry out an analysis to report on.  The difficulty of the class was generated through the re-familiarisation with the different computer software.
+
+</p>
+</div>
+
+
+
+
+      
+      
+    
+      
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="Assessment Structure" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -15px; width: 900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Assessment Structure</b></h1></button>
+<div class="content">
+  <p><i>- "Coursework covered various problems" <BR><BR>
+- "Good report centred assessment, with constant feedback." <BR><BR>
+      - "There were 3 courseworks for the class, equally weighted. One was CAD, one was ANSYS FEA and the third was ANSYS CFD. Each one required design, analysis and then a report written about them. The reports format differed but were explained. More effort was required than expected. There was adequate feedback following each coursework mark given." <BR><BR> </i>
+The entirety of the mark for this class came from the three courseworks.  Each of these followed the same structure, consisting of a design aspect followed by an analysis to be reported on.  This meant that the assessment was consistent and students knew what to expect.  Varying difficulty and time dedicated to each coursework was experienced however and must be anticipated by students to ensure that they are not overloaded or caught off-guard by the workload. 
+
+</p>
+</div>
+
+
+
+
+
+ 
+  
+  <!-- Have your say -->
+  <div class="w3-container" id="Continuity" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -30px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Continuity</b></h1></button>
+<div class="content">
+  <p><i>- "Good more industrial feel thought it tied much of the mathematics and analysis into products." <BR><BR>
+- "Linked well in the end. Skill level was a step up from previous years and incorporated elements of different classes into the courseworks" <BR><BR>
+- "Important skills in CAD/FEA/CFD, linked in well with 4th and 5th year projects" <BR><BR>
+- "I do feel I learned a lot using the different softwares. Polished my computing skills." <BR><BR>
+      - "This class required us to use skills previous learnt from Creo and Ansys but in saying that, we all needed to be reminded of these during the first few times using the software again - so don't worry if you've forgotten everything. There aren't any classes that use a lot (if any) Creo/CAD software or Ansys in 5th year, this is the last time I used them in uni. Some people used these skills for designing parts/testing their group projects. " <BR><BR> </i>
+The class was very relevant to previous CAED classes and incorporated maths and analysis skills into a report based format.  It was also good preparation for a dissertation or project work.  Software and computer skills were developed which are essential to many roles in industry.
+
+</p>
+  </div>
+     <div class="w3-container" id="Resources" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -45px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Resources</b></h1></button>
+<div class="content">
+  <p><i>- "Good range of topics covered" <BR><BR>
+- "Lecture slides were intended to develop enough understanding of the topic to allow us to complete the assignment but they seemed unrelated a lot of the time. Projects tended to be just following step by step instructions as a result of this rather than requiring any creative thinking" <BR><BR>
+- "Past projects were more useful than official material" <BR><BR>
+- "Material was generally good but there was disparity between information provided on courseworks." <BR><BR>
+      - "A lot of background material available" <BR><BR> </i>
+Students thought that the class lectures focused more on developing background knowledge and competency on CAED concepts.  The past projects made available provided the most useful information for tackling the courseworks.
+
+</p>
+  </div>
+<div class="w3-container" id="Have Your Say" style="margin-top:75px; text-align: right;">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Have Your Say</b></h1>
+    
+    <a href="https://goo.gl/forms/TL7mHII6CMQV8Wfj1" target="_blank" > Take the Survey </a>
+  </div>
+
+</div>
+<div class="w3-container" id="Comments" style="margin-top:75px; text-align: left;">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Comments</b></h1>
+    
+    <a href="https://docs.google.com/forms/d/1lz0KRz2Ppf6Cg9ObpVfETR2WfZO075N8cdxDiPPOiy4/edit" target="_blank" > Please ask any questions below </a>
+  </div>
+
+</div>
+     <div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="portlet portlet-default">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h4><i class="fa fa-circle text-green"></i> khdcds</h4>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                </div>
+                <div id="chat" class="panel-collapse collapse in">
+                    <div>
+                    <div class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="text-center text-muted small">January 1, 2014 at 12:23 PM</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:23 PM</span>
+                                        </h4>
+                                        <p>'Comment'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:28 PM</span>
+                                        </h4>
+                                        <p>'reply'</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:39 PM</span>
+                                        </h4>
+                                        <p>'reply'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    </div>
+                    <div class="portlet-footer">
+                        <form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Enter message..." style="width:500px;height:100px":></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default pull-right">Send</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+</div>  
+      
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
+  
+   
+</script>
+     
+
+      
+</body>
+</html>
+1

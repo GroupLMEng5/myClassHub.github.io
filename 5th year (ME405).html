@@ -1,0 +1,525 @@
+ 
+<!DOCTYPE html>
+<html>
+<title>Heat and Flow 4 - ME405</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px; 
+    
+    background-color:white}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+    .w3-bar-block{
+        background-color: #286D9E;
+        color: white;
+        
+    }
+    .w3-jumbo{ background-color: #286D9E;
+        
+    }
+    .header{
+        background-color: #dark-grey;
+        color: black;
+        
+    }
+    .w3-container{
+        background-color: #white;
+        color: dark-grey;
+            
+    }
+    .mySidebar{
+        background-color: #286D9E;
+    }
+    .collapsible {
+    background-color: lightsteelblue;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: white;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+}
+    .portlet {
+    margin-bottom: 15px;
+}
+
+.btn-white {
+    border-color: #cccccc;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.portlet {
+    border: 1px solid;
+}
+
+.portlet .portlet-heading {
+    padding: 0 15px;
+}
+
+.portlet .portlet-heading h4 {
+    padding: 1px 0;
+    font-size: 16px;
+}
+
+.portlet .portlet-heading a {
+    color: #fff;
+}
+
+.portlet .portlet-heading a:hover,
+.portlet .portlet-heading a:active,
+.portlet .portlet-heading a:focus {
+    outline: none;
+}
+
+.portlet .portlet-widgets .dropdown-menu a {
+    color: #333;
+}
+
+.portlet .portlet-widgets ul.dropdown-menu {
+    min-width: 0;
+}
+
+.portlet .portlet-heading .portlet-title {
+    float: left;
+}
+
+.portlet .portlet-heading .portlet-title h4 {
+    margin: 10px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets {
+    float: right;
+    margin: 8px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets .tabbed-portlets {
+    display: inline;
+}
+
+.portlet .portlet-heading .portlet-widgets .divider {
+    margin: 0 5px;
+}
+
+.portlet .portlet-body {
+    padding: 15px;
+    background: #fff;
+}
+
+.portlet .portlet-footer {
+    padding: 10px 15px;
+    background: #e0e7e8;
+}
+
+.portlet .portlet-footer ul {
+    margin: 0;
+}
+
+.portlet-green,
+.portlet-green>.portlet-heading {
+    border-color: #16a085;
+}
+
+.portlet-green>.portlet-heading {
+    color: #fff;
+    background-color: #16a085;
+}
+
+.portlet-orange,
+.portlet-orange>.portlet-heading {
+    border-color: #f39c12;
+}
+
+.portlet-orange>.portlet-heading {
+    color: #fff;
+    background-color: #f39c12;
+}
+
+.portlet-blue,
+.portlet-blue>.portlet-heading {
+    border-color: #2980b9;
+}
+
+.portlet-blue>.portlet-heading {
+    color: #fff;
+    background-color: #2980b9;
+}
+
+.portlet-red,
+.portlet-red>.portlet-heading {
+    border-color: #e74c3c;
+}
+
+.portlet-red>.portlet-heading {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+.portlet-purple,
+.portlet-purple>.portlet-heading {
+    border-color: #8e44ad;
+}
+
+.portlet-purple>.portlet-heading {
+    color: #fff;
+    background-color: #8e44ad;
+}
+
+.portlet-default,
+.portlet-dark-blue,
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    border-color: #34495e;
+}
+
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    color: #fff;
+    background-color: #34495e;
+}
+
+.portlet-basic,
+.portlet-basic>.portlet-heading {
+    border-color: #333;
+}
+
+.portlet-basic>.portlet-heading {
+    border-bottom: 1px solid #333;
+    color: #333;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    .portlet {
+        margin-bottom: 30px;
+    }
+}
+
+.text-green {
+    color: #16a085;
+}
+
+.text-orange {
+    color: #f39c12;
+}
+
+.text-red {
+    color: #e74c3c;
+}   
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;background-color:#0078ae" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px;font-color:#002B5C">Close Menu</a>
+  <div class="w3-container">
+      <h3><a href="index.html"> <span class="glyphicon glyphicon-home"></span></a> </h3>
+  </div>
+  <div class="w3-bar-block" style="background-color: #0078ae">
+      <a href="index.html"><span class="glyphicon glyphicon-home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"></span>Home</a> 
+    <a href="#Summary" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Summary</a> 
+    <a href="#Difficulty" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Difficulty</a> 
+    <a href="#Assessment Structure" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Assessment Structure</a> 
+    <a href="#Continuity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Continuity</a> 
+    <a href="#Resources" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resources</a>
+    <a href="#Have Your Say" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Have Your Say</a>
+      <a href="#Comments" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Comments</a>
+  </div>
+</nav>
+
+<header class="w3-container w3-top w3-hide-large w3-# w3-xlarge w3-padding" style="background-color: lightgray;">
+  <a href="javascript:void(0)" class="w3-button w3-#286D9E w3-margin-right" onclick="w3_open()">☰</a>
+  <span>ME405</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px;margin-right:0px">
+
+  <!-- Header -->
+ 
+  <div class="jumbotron" style="text-align:center;font-size:48px">
+     
+   
+      <p>ME405 - Heat and Flow 4</p>
+   
+    </div>
+  
+
+  <div class="w3-row-padding">
+    <div class="w3-half">
+    </div>
+
+    <div class="w3-half">
+    </div>
+  </div>
+
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="Summary" style="margin-top:75px; margin:0px">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Summary</b></h1>
+    
+    <p>Heat and Flow 4 developed on heat transfer and fluid dynamics from previous years. The content is heavily focussed on conduction, convection, radiation and mass transfer. The class ran for one semester and was graded via a myplace quiz (20%) sat under exam conditions and a final exam (80%) in the december exam diet. Heat and Flow 4 was a 10-credit class and was densely calculation-based. 
+<BR><BR>
+Overall, the class was seen as difficult but at the standard expected for a level 4 class. The lectures and tutorials were of a high standard and assisted in achieving full comprehension of the course which was essential to achieving a high mark. The knowledge gained from previous Heat and Flow classes was fundamental to achieving this understanding.
+<BR><BR>
+Difficulty - 7.8<BR>
+Overall Satisfaction (including material, assignments, relevance) - 6.7
+
+    </p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="Difficulty" style="margin-top:75px">
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<button class="collapsible" style="width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Difficulty</b></h1></button>
+<div class="content">
+  <p><i>
+- "Reasonably difficult but within the expected level of a 4th year class" <BR><BR>
+- "Very formulaic and memorisable, had to start early otherwise it would have been bad." <BR><BR>
+- "The material in the class was challenging but doable. Attendance to lectures was necessary to understand the class properly. " <BR><BR>
+      - "The class contained some difficult content, this was made much easier by the standard of teaching and the materials available, however the exam was also very hard." <BR><BR> 
+Acceptable level throughout the semester with interesting material with relevance to industry. <BR><BR> </i>
+The class was found to be challenging by the majority of students but of a standard expected for a 4th year class.  The material and teaching were of a high standard.  Attendance to lectures and tutorials was essential to tackling the class. 
+
+
+</p>
+</div>
+
+
+
+
+      
+      
+    
+      
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="Assessment Structure" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -15px; width: 900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Assessment Structure</b></h1></button>
+<div class="content">
+  <p><i>- "Class test was good to test your knowledge of the theory" <BR><BR>
+- "Assignment was relevant to class"  <BR><BR>
+- "There was an online quiz mid semester 1 which was worth 20%. Think it was a good weighting between coursework and the exam. Revising was needed for the quiz and results were given back immediately. " <BR><BR>
+- "There were no assignments, I do not think they were needed for the content. The class test was good as it tested understanding rather than calculation ability." <BR><BR>
+      - "The small quiz done halfway through the semester was useful. Good practise for theory stuff." <BR><BR> </i>
+The assessment, outwith the exam, consisted of a small class test.  This was a good test of knowledge and assisted in learning the content.  It was purely theory based and involved no calculations.
+
+
+</p>
+</div>
+
+
+
+
+
+ 
+  
+  <!-- Have your say -->
+  <div class="w3-container" id="Continuity" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -30px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Continuity</b></h1></button>
+<div class="content">
+  <p><i> - "Relevant to prior heat and flow classes. Important to learn for use in industry" <BR><BR>
+- "Class was relevant to previous years of Heat and Flow and has had a small amount of crossover into other classes. Assumed knowledge was appropriate given the number of preceding classes " <BR><BR>
+-" Very relevant and has come in useful since. " <BR><BR>
+- "Very useful skills learnt, a little crossover with previous heat and flow classes however it built on the knowledge already possessed." <BR><BR>
+      - "This class is a follow on from Heat and Flow 3, so previous knowledge is definitely needed. Some topics were new and others were adding to previous topics. Same kind of lectures and tutorials as Heat and Flow in previous years. The class is only 1 semester this year but some optional classes in 5th year are related to Thermodynamics. " <BR><BR> </i>
+The content followed on closely from previous Heat and Flow classes with some repeated content/topics."
+The content was not particularly relevant to other classes but the information is fundamental in many fields of engineering.  The knowledge gained will prove particularly useful if it is related to 4th or 5th year projects.
+
+</p>
+  </div>
+     <div class="w3-container" id="Resources" style="margin-top:75px">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<button class="collapsible" style="margin-left: -45px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Resources</b></h1></button>
+<div class="content">
+  <p><i>- "An emphasis on developing a full understanding of the subject rather than just memorising exam questions.
+Above standard" <BR><BR>
+- "One of the best classes for material" <BR><BR>
+- "Good use of myplace, Solutions weren't available, worked examples provided in class were useful, tutorials largely matched content. " <BR><BR>
+      - "There wasn't much in the way of past papers and solutions. There were good tutorials which helped to understand the lecture information. There were worked examples in class which was the best way to understand the class content. Some were hard to follow in class but once you went over them again was helpful. " <BR><BR> </i>
+The class had good material with detailed lectures and worked examples.  These examples proved crucial to developing a full understanding of the class.  It was stressed that this was essential to achieving a high mark for the class rather than simply memorising past exam solutions.  This was vindicated in the final exam which proved to be difficult, requiring full comprehension of the concepts covered to complete. 
+
+</p>
+  </div>
+<div class="w3-container" id="Have Your Say" style="margin-top:75px; text-align: right;">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Have Your Say</b></h1>
+    
+    <a href="https://goo.gl/forms/TL7mHII6CMQV8Wfj1" target="_blank" > Take the Survey </a>
+  </div>
+
+</div>
+<div class="w3-container" id="Comments" style="margin-top:75px; text-align: left;">
+    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Comments</b></h1>
+    
+    <a href="https://docs.google.com/forms/d/1lz0KRz2Ppf6Cg9ObpVfETR2WfZO075N8cdxDiPPOiy4/edit" target="_blank" > Please ask any questions below </a>
+  </div>
+
+</div>
+     <div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="portlet portlet-default">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h4><i class="fa fa-circle text-green"></i> khdcds</h4>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                </div>
+                <div id="chat" class="panel-collapse collapse in">
+                    <div>
+                    <div class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="text-center text-muted small">January 1, 2014 at 12:23 PM</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:23 PM</span>
+                                        </h4>
+                                        <p>'Comment'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:28 PM</span>
+                                        </h4>
+                                        <p>'reply'</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Anonymous
+                                            <span class="small pull-right">12:39 PM</span>
+                                        </h4>
+                                        <p>'reply'</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    </div>
+                    <div class="portlet-footer">
+                        <form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Enter message..." style="width:500px;height:100px":></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default pull-right">Send</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+</div>  
+      
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
+  
+   
+</script>
+     
+
+      
+</body>
+</html>
