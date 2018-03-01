@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html>
 <title>Heat and Flow 2</title>
@@ -7,509 +6,560 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-body {font-size:16px; 
-    
-    background-color:white}
-.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
-.w3-half img:hover{opacity:1}
-    .w3-bar-block{
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Poppins", sans-serif
+    }
+
+    body {
+        font-size: 16px;
+
+        background-color: white
+    }
+
+    .w3-half img {
+        margin-bottom: -6px;
+        margin-top: 16px;
+        opacity: 0.8;
+        cursor: pointer
+    }
+
+    .w3-half img:hover {
+        opacity: 1
+    }
+
+    .w3-bar-block {
         background-color: #286D9E;
         color: white;
-        
+
     }
-    .w3-jumbo{ background-color: #286D9E;
-        
+
+    .w3-jumbo {
+        background-color: #286D9E;
+
     }
-    .header{
+
+    .header {
         background-color: #dark-grey;
         color: black;
-        
+
     }
-    .w3-container{
+
+    .w3-container {
         background-color: #white;
         color: dark-grey;
-            
+
     }
-    .mySidebar{
+
+    .mySidebar {
         background-color: #286D9E;
     }
+
     .collapsible {
-    background-color: lightsteelblue;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-}
-
-.active, .collapsible:hover {
-    background-color: white;
-}
-
-.content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: white;
-}
-    .portlet {
-    margin-bottom: 15px;
-}
-
-.btn-white {
-    border-color: #cccccc;
-    color: #333333;
-    background-color: #ffffff;
-}
-
-.portlet {
-    border: 1px solid;
-}
-
-.portlet .portlet-heading {
-    padding: 0 15px;
-}
-
-.portlet .portlet-heading h4 {
-    padding: 1px 0;
-    font-size: 16px;
-}
-
-.portlet .portlet-heading a {
-    color: #fff;
-}
-
-.portlet .portlet-heading a:hover,
-.portlet .portlet-heading a:active,
-.portlet .portlet-heading a:focus {
-    outline: none;
-}
-
-.portlet .portlet-widgets .dropdown-menu a {
-    color: #333;
-}
-
-.portlet .portlet-widgets ul.dropdown-menu {
-    min-width: 0;
-}
-
-.portlet .portlet-heading .portlet-title {
-    float: left;
-}
-
-.portlet .portlet-heading .portlet-title h4 {
-    margin: 10px 0;
-}
-
-.portlet .portlet-heading .portlet-widgets {
-    float: right;
-    margin: 8px 0;
-}
-
-.portlet .portlet-heading .portlet-widgets .tabbed-portlets {
-    display: inline;
-}
-
-.portlet .portlet-heading .portlet-widgets .divider {
-    margin: 0 5px;
-}
-
-.portlet .portlet-body {
-    padding: 15px;
-    background: #fff;
-}
-
-.portlet .portlet-footer {
-    padding: 10px 15px;
-    background: #e0e7e8;
-}
-
-.portlet .portlet-footer ul {
-    margin: 0;
-}
-
-.portlet-green,
-.portlet-green>.portlet-heading {
-    border-color: #16a085;
-}
-
-.portlet-green>.portlet-heading {
-    color: #fff;
-    background-color: #16a085;
-}
-
-.portlet-orange,
-.portlet-orange>.portlet-heading {
-    border-color: #f39c12;
-}
-
-.portlet-orange>.portlet-heading {
-    color: #fff;
-    background-color: #f39c12;
-}
-
-.portlet-blue,
-.portlet-blue>.portlet-heading {
-    border-color: #2980b9;
-}
-
-.portlet-blue>.portlet-heading {
-    color: #fff;
-    background-color: #2980b9;
-}
-
-.portlet-red,
-.portlet-red>.portlet-heading {
-    border-color: #e74c3c;
-}
-
-.portlet-red>.portlet-heading {
-    color: #fff;
-    background-color: #e74c3c;
-}
-
-.portlet-purple,
-.portlet-purple>.portlet-heading {
-    border-color: #8e44ad;
-}
-
-.portlet-purple>.portlet-heading {
-    color: #fff;
-    background-color: #8e44ad;
-}
-
-.portlet-default,
-.portlet-dark-blue,
-.portlet-default>.portlet-heading,
-.portlet-dark-blue>.portlet-heading {
-    border-color: #34495e;
-}
-
-.portlet-default>.portlet-heading,
-.portlet-dark-blue>.portlet-heading {
-    color: #fff;
-    background-color: #34495e;
-}
-
-.portlet-basic,
-.portlet-basic>.portlet-heading {
-    border-color: #333;
-}
-
-.portlet-basic>.portlet-heading {
-    border-bottom: 1px solid #333;
-    color: #333;
-    background-color: #fff;
-}
-
-@media(min-width:768px) {
-    .portlet {
-        margin-bottom: 30px;
+        background-color: lightsteelblue;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
     }
-}
 
-.text-green {
-    color: #16a085;
-}
+    .active,
+    .collapsible:hover {
+        background-color: white;
+    }
 
-.text-orange {
-    color: #f39c12;
-}
+    .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: white;
+    }
 
-.text-red {
-    color: #e74c3c;
-}   
+    .portlet {
+        margin-bottom: 15px;
+    }
+
+    .btn-white {
+        border-color: #cccccc;
+        color: #333333;
+        background-color: #ffffff;
+    }
+
+    .portlet {
+        border: 1px solid;
+    }
+
+    .portlet .portlet-heading {
+        padding: 0 15px;
+    }
+
+    .portlet .portlet-heading h4 {
+        padding: 1px 0;
+        font-size: 16px;
+    }
+
+    .portlet .portlet-heading a {
+        color: #fff;
+    }
+
+    .portlet .portlet-heading a:hover,
+    .portlet .portlet-heading a:active,
+    .portlet .portlet-heading a:focus {
+        outline: none;
+    }
+
+    .portlet .portlet-widgets .dropdown-menu a {
+        color: #333;
+    }
+
+    .portlet .portlet-widgets ul.dropdown-menu {
+        min-width: 0;
+    }
+
+    .portlet .portlet-heading .portlet-title {
+        float: left;
+    }
+
+    .portlet .portlet-heading .portlet-title h4 {
+        margin: 10px 0;
+    }
+
+    .portlet .portlet-heading .portlet-widgets {
+        float: right;
+        margin: 8px 0;
+    }
+
+    .portlet .portlet-heading .portlet-widgets .tabbed-portlets {
+        display: inline;
+    }
+
+    .portlet .portlet-heading .portlet-widgets .divider {
+        margin: 0 5px;
+    }
+
+    .portlet .portlet-body {
+        padding: 15px;
+        background: #fff;
+    }
+
+    .portlet .portlet-footer {
+        padding: 10px 15px;
+        background: #e0e7e8;
+    }
+
+    .portlet .portlet-footer ul {
+        margin: 0;
+    }
+
+    .portlet-green,
+    .portlet-green>.portlet-heading {
+        border-color: #16a085;
+    }
+
+    .portlet-green>.portlet-heading {
+        color: #fff;
+        background-color: #16a085;
+    }
+
+    .portlet-orange,
+    .portlet-orange>.portlet-heading {
+        border-color: #f39c12;
+    }
+
+    .portlet-orange>.portlet-heading {
+        color: #fff;
+        background-color: #f39c12;
+    }
+
+    .portlet-blue,
+    .portlet-blue>.portlet-heading {
+        border-color: #2980b9;
+    }
+
+    .portlet-blue>.portlet-heading {
+        color: #fff;
+        background-color: #2980b9;
+    }
+
+    .portlet-red,
+    .portlet-red>.portlet-heading {
+        border-color: #e74c3c;
+    }
+
+    .portlet-red>.portlet-heading {
+        color: #fff;
+        background-color: #e74c3c;
+    }
+
+    .portlet-purple,
+    .portlet-purple>.portlet-heading {
+        border-color: #8e44ad;
+    }
+
+    .portlet-purple>.portlet-heading {
+        color: #fff;
+        background-color: #8e44ad;
+    }
+
+    .portlet-default,
+    .portlet-dark-blue,
+    .portlet-default>.portlet-heading,
+    .portlet-dark-blue>.portlet-heading {
+        border-color: #34495e;
+    }
+
+    .portlet-default>.portlet-heading,
+    .portlet-dark-blue>.portlet-heading {
+        color: #fff;
+        background-color: #34495e;
+    }
+
+    .portlet-basic,
+    .portlet-basic>.portlet-heading {
+        border-color: #333;
+    }
+
+    .portlet-basic>.portlet-heading {
+        border-bottom: 1px solid #333;
+        color: #333;
+        background-color: #fff;
+    }
+
+    @media(min-width:768px) {
+        .portlet {
+            margin-bottom: 30px;
+        }
+    }
+
+    .text-green {
+        color: #16a085;
+    }
+
+    .text-orange {
+        color: #f39c12;
+    }
+
+    .text-red {
+        color: #e74c3c;
+    }
+
 </style>
+
 <body>
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;background-color:#0078ae" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px;font-color:#002B5C">Close Menu</a>
-  <div class="w3-container">
-      <h3><a href="index.html"> <span class="glyphicon glyphicon-home"></span></a> </h3>
-  </div>
-  <div class="w3-bar-block" style="background-color: #0078ae">
-      <a href="index.html"><span class="glyphicon glyphicon-home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"></span>Home</a> 
-    <a href="#Summary" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Summary</a> 
-    <a href="#Difficulty" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Difficulty</a> 
-    <a href="#Assessment Structure" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Assessment Structure</a> 
-    <a href="#Continuity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Continuity</a> 
-    <a href="#Resources" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resources</a>
-    <a href="#Have Your Say" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Have Your Say</a>
-      <a href="#Comments" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Comments</a>
-  </div>
-</nav>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;background-color:#0078ae" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px;font-color:#002B5C">Close Menu</a>
+        <div class="w3-container">
+            <h3><a href="index.html"> <span class="glyphicon glyphicon-home"></span></a> </h3>
+        </div>
+        <div class="w3-bar-block" style="background-color: #0078ae">
+            <a href="index.html"><span class="glyphicon glyphicon-home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"></span>Home</a>
+            <a href="#Summary" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Summary</a>
+            <a href="#Difficulty" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Difficulty</a>
+            <a href="#Assessment Structure" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Assessment Structure</a>
+            <a href="#Continuity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Continuity</a>
+            <a href="#Resources" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resources</a>
+            <a href="#Have Your Say" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Have Your Say</a>
+            <a href="#Comments" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Comments</a>
+        </div>
+    </nav>
 
-<header class="w3-container w3-top w3-hide-large w3-# w3-xlarge w3-padding" style="background-color: lightgray;">
-  <a href="javascript:void(0)" class="w3-button w3-#286D9E w3-margin-right" onclick="w3_open()">☰</a>
-  <span>ME203</span>
-</header>
+    <header class="w3-container w3-top w3-hide-large w3-# w3-xlarge w3-padding" style="background-color: lightgray;">
+        <a href="javascript:void(0)" class="w3-button w3-#286D9E w3-margin-right" onclick="w3_open()">☰</a>
+        <span>ME203</span>
+    </header>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:250px;margin-right:0px">
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:250px;margin-right:0px">
 
-  <!-- Header -->
- 
-  <div class="jumbotron" style="text-align:center;font-size:48px">
-     
-   
-      <p>ME203 - Heat and Flow 2</p>
-   
-    </div>
-  
+        <!-- Header -->
 
-  <div class="w3-row-padding">
-    <div class="w3-half">
-    </div>
+        <div class="jumbotron" style="text-align:center;font-size:48px">
 
-    <div class="w3-half">
-    </div>
-  </div>
 
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>
+            <p>ME203 - Heat and Flow 2
+            </p>
 
-  <!-- Services -->
-  <div class="w3-container" id="Summary" style="margin-top:75px; margin:0px">
-    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Summary</b></h1>
-    
-    <p>Heat and flow 2 builds on the fundamentals of fluid dynamics and thermodynamics learned in 1st year; specifically looking at further elements of the conservation of mass, momentum and energy and flow in pipes in fluid dynamics section, and then looking at the thermodynamics basics in a number of gas and liquid-vapour power cycles used in the real world. The 20 credit two semester class is assessed in two 40% exams at the end of the resective semesters, as well as 2 online quizzes, worth 10% and 5%, and a lab assessed in a report worth 5%. <BR><BR>
-        Overall students felt that the class was a considerable step up from Heat and Flow 1 but the difficulty could be combatted through putting in the time to learn the subject. This was aided in the material available, the tutorial/exam solutions and lecture material presented on myplace helped in the learning process, as well as the knowledge gained in Heat and Flow 1. The assessment structure was deemed to be a strong point of the class; students were encouraged to keep on top of their studies for this class through the continuous assessment in labs, class tests and exams.
-    </p>
-  </div>
-  
-  <!-- Designers -->
-  <div class="w3-container" id="Difficulty" style="margin-top:75px">
-  
-<meta name="viewport" content="width=device-width, initial-scale=1">
+        </div>
 
-<button class="collapsible" style="width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Difficulty</b></h1></button>
-<div class="content">
-  <p><i>- "Quite a large step up in detail from heat and flow 1. Lecture were relatively easy to follow, talking through lectures/examples. Tutorials were neither too hard nor easy and were relevant to the class material of that particular week." <BR><BR>
+
+        <div class="w3-row-padding">
+            <div class="w3-half">
+            </div>
+
+            <div class="w3-half">
+            </div>
+        </div>
+
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="w3-container" id="Summary" style="margin-top:75px; margin:0px">
+            <h1 class="w3-xxlarge w3-text-dark-grey"><b>Summary</b></h1>
+
+            <p>Heat and flow 2 builds on the fundamentals of fluid dynamics and thermodynamics learned in 1st year; specifically looking at further elements of the conservation of mass, momentum and energy and flow in pipes in fluid dynamics section, and then looking at the thermodynamics basics in a number of gas and liquid-vapour power cycles used in the real world. The 20 credit two semester class is assessed in two 40% exams at the end of the resective semesters, as well as 2 online quizzes, worth 10% and 5%, and a lab assessed in a report worth 5%.
+                <BR>
+                <BR>
+                <div class="w3-row w3-container" style= "">
+
+                    <div class="w3-col s4 w3-green w3-center">
+                        <p>Exam 1 (40%)</p>
+                    </div>
+                    <div class="w3-col s4 w3-blue w3-center">
+                        <p>Exam 2 (40%)</p>
+                    </div>
+                    <div class="w3-col s1 w3-orange w3-center" style="height: 56px;padding:5px;font-size:13px">
+                        <p>Quiz (10%)</p>
+                    </div>
+                    <div class="w3-col s1 w3-red w3-center" style="height: 56px;padding:5px;font-size:13px">
+                        <p>Quiz (5%)</p>
+                    </div>
+                    <div class="w3-col s2 w3-purple w3-center" style="height: 56px;padding:5px;font-size:13px">
+                        <p>Lab Report (5%)</p>
+                    </div>
+                </div>
+
+
+
+                <BR>
+                <BR> Overall students felt that the class was a considerable step up from Heat and Flow 1 but the difficulty could be combatted through putting in the time to learn the subject. This was aided in the material available, the tutorial/exam solutions and lecture material presented on myplace helped in the learning process, as well as the knowledge gained in Heat and Flow 1. The assessment structure was deemed to be a strong point of the class; students were encouraged to keep on top of their studies for this class through the continuous assessment in labs, class tests and exams.
+            </p>
+        </div>
+
+        <!-- Designers -->
+        <div class="w3-container" id="Difficulty" style="margin-top:75px">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <button class="collapsible" style="width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Difficulty</b></h1></button>
+            <div class="content">
+                <p><i>- "Quite a large step up in detail from heat and flow 1. Lecture were relatively easy to follow, talking through lectures/examples. Tutorials were neither too hard nor easy and were relevant to the class material of that particular week." <BR><BR>
 - "Hard to understand during the year, eventually got there with cramming. Should have done better, keep on top of it" <BR><BR>
 - "The theory was difficult to grasp and required lots of time in preparation for the exam" <BR><BR>
 - "Overall the class was quite difficult compared to the material from Heat and Flow 1 because I think it was a big step up. The lectures were quite hard to follow because there was a lot of information on the slides and they were very fast-paced." <BR><BR>
-      </i>
-      Significant step up from Heat and Flow 1.  Students found that if they did not keep on top of the workload then they left themselves too much when it came to the exam.
-      </p>
-</div>
+      </i> Significant step up from Heat and Flow 1. Students found that if they did not keep on top of the workload then they left themselves too much when it came to the exam.
+                </p>
+            </div>
 
 
 
 
-      
-      
-    
-      
-  <!-- Packages / Pricing Tables -->
-  <div class="w3-container" id="Assessment Structure" style="margin-top:75px">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
-<button class="collapsible" style="margin-left: -15px; width: 900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Assessment Structure</b></h1></button>
-<div class="content">
-  <p><i>- "Class tests throughout the year work well, helped keep on top of class." <BR><BR>
+
+            <!-- Packages / Pricing Tables -->
+            <div class="w3-container" id="Assessment Structure" style="margin-top:75px">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+                <button class="collapsible" style="margin-left: -15px; width: 900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Assessment Structure</b></h1></button>
+                <div class="content">
+                    <p><i>- "Class tests throughout the year work well, helped keep on top of class." <BR><BR>
 - "Class tests were good to include as made exam (especially december) a lot less worrying as it kept you up to date with the course without a proper exam." <BR><BR>
 - "Some of the questions were completely different from any tutorial questions or examples we were given throughout the year and were very misleading. No software was needed for the course." <BR><BR>
-      </i>
-Class tests divided up the mark for the class and allowed students to keep on top of studies.  The style of questions were completely different to tutorials and exams however and therefore full understanding of the course content was required to achieve a good mark.
+      </i> Class tests divided up the mark for the class and allowed students to keep on top of studies. The style of questions were completely different to tutorials and exams however and therefore full understanding of the course content was required to achieve a good mark.
 
-</p>
-</div>
-
+                    </p>
+                </div>
 
 
 
 
- 
-  
-  <!-- Have your say -->
-  <div class="w3-container" id="Continuity" style="margin-top:75px">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
-<button class="collapsible" style="margin-left: -30px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Continuity</b></h1></button>
-<div class="content">
-  <p><i> - "Yes very helpful" <BR><BR>
+                <!-- Have your say -->
+                <div class="w3-container" id="Continuity" style="margin-top:75px">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+                    <button class="collapsible" style="margin-left: -30px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Continuity</b></h1></button>
+                    <div class="content">
+                        <p><i> - "Yes very helpful" <BR><BR>
 - "Obviously a helpful class as its continued into 3rd year and have the knowledge to understand the subject more, wouldn't really say it crossed over into another class." <BR><BR>
 - "Knowledge from heat and flow 1 was useful throughout heat and flow 2. Both classes were relevant with cross over in flight and spaceflight. " <BR><BR>
 - "A lot of notation in heat and flow has different meanings to other courses which is annoying. But alot of transferable knowledge between this and flight and spaceflight, which was very helpful. Also very helpful knowledge for 3rd year." <BR><BR>
 - "Very relevant when compared with aero especially. The thermo side was useful to know about, as it didn't have direct impact with other classes but had some really useful core information (eg engine cycles)" <BR><BR>
 - "I feel like the first year class did not prepare us well for the second year class. A lot of knew information was thrown at us, more than other classes that year. It was a big step up from Heat and Flow 1 with little crossover because it was much harder. I use information and material from the course in other classes when there are crossovers between topics. " <BR><BR>
-      </i>
-The class was closely related to prior and future Heat and Flow classes and also relates to some topics in Flight and Spaceflight.  It was a very useful and relevant class in the sense that it covered some core engineering topics such as heat cycles within engines and thermal power stations.
+      </i> The class was closely related to prior and future Heat and Flow classes and also relates to some topics in Flight and Spaceflight. It was a very useful and relevant class in the sense that it covered some core engineering topics such as heat cycles within engines and thermal power stations.
 
-</p>
-  </div>
-     <div class="w3-container" id="Resources" style="margin-top:75px">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+                        </p>
+                    </div>
+                    <div class="w3-container" id="Resources" style="margin-top:75px">
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<button class="collapsible" style="margin-left: -45px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Resources</b></h1></button>
-<div class="content">
-  <p><i> - "Tutorials and past papers were decent as solutions were provided and this helped a lot for when i was stuck and unable to get help, however fluid mechanics didn't provide solutions to some of the earlier past papers. Myplace was a great help though as everything required was provided. Lecturers done well with worked examples in class and provided written solutions. One thing that was slightly annoying was the units in equations but that's just a personal thing." <BR><BR>
+
+                        <button class="collapsible" style="margin-left: -45px;width:900px"><h1 class="w3-xxlarge w3-text-dark-grey"><b>Resources</b></h1></button>
+                        <div class="content">
+                            <p><i> - "Tutorials and past papers were decent as solutions were provided and this helped a lot for when i was stuck and unable to get help, however fluid mechanics didn't provide solutions to some of the earlier past papers. Myplace was a great help though as everything required was provided. Lecturers done well with worked examples in class and provided written solutions. One thing that was slightly annoying was the units in equations but that's just a personal thing." <BR><BR>
 - "All lecture slides/class examples available on myplace. Past papers with solutions available where necessary." <BR> <BR>
 - "The lectures had plenty of material and myplace had lots available. More worked examples would have been good" <BR><BR>
-      - "Tutorials and solutions were available online which was very helpful. Lecture slides had a lot of information on them which was good to look back on. Examples were sometimes done exclusively in lectures which encourages attendance but was difficult to get hold of these if you missed a lecture. The lectures had probably a bit too much information in them sometimes, however the material had to be covered in the time so it couldn't really be helped." <BR> <BR></i> 
-Students found the class had high quality material with detailed lecture slides and tutorials. Worked examples done in class were essential to learning the content and therefore attendance at lectures was necessary to obtain these and to observe them being done.
+      - "Tutorials and solutions were available online which was very helpful. Lecture slides had a lot of information on them which was good to look back on. Examples were sometimes done exclusively in lectures which encourages attendance but was difficult to get hold of these if you missed a lecture. The lectures had probably a bit too much information in them sometimes, however the material had to be covered in the time so it couldn't really be helped." <BR> <BR></i> Students found the class had high quality material with detailed lecture slides and tutorials. Worked examples done in class were essential to learning the content and therefore attendance at lectures was necessary to obtain these and to observe them being done.
 
-</p>
-  </div>
-<div class="w3-container" id="Have Your Say" style="margin-top:75px; text-align: right;">
-    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Have Your Say</b></h1>
-    
-    <a href="https://goo.gl/forms/TL7mHII6CMQV8Wfj1" target="_blank" > Take the Survey </a>
-  </div>
+                            </p>
+                        </div>
+                        <div class="w3-container" id="Have Your Say" style="margin-top:75px; text-align: right;">
+                            <h1 class="w3-xxlarge w3-text-dark-grey"><b>Have Your Say</b></h1>
 
-</div>
-<div class="w3-container" id="Comments" style="margin-top:75px; text-align: left;">
-    <h1 class="w3-xxlarge w3-text-dark-grey"><b>Comments</b></h1>
-    
-    <a href="https://docs.google.com/forms/d/1lz0KRz2Ppf6Cg9ObpVfETR2WfZO075N8cdxDiPPOiy4/edit" target="_blank" > Please ask any questions below </a>
-  </div>
+                            <a href="https://goo.gl/forms/TL7mHII6CMQV8Wfj1" target="_blank"> Take the Survey </a>
+                        </div>
 
-</div>
-     <div class="container bootstrap snippet">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="portlet portlet-default">
-                <div class="portlet-heading">
-                    <div class="portlet-title">
-                        <h4><i class="fa fa-circle text-green"></i> khdcds</h4>
                     </div>
-                    
-                    <div class="clearfix"></div>
+                    <div class="w3-container" id="Comments" style="margin-top:75px; text-align: left;">
+                        <h1 class="w3-xxlarge w3-text-dark-grey"><b>Comments</b></h1>
+
+                        <a href="https://docs.google.com/forms/d/1lz0KRz2Ppf6Cg9ObpVfETR2WfZO075N8cdxDiPPOiy4/edit" target="_blank"> Please ask any questions below </a>
+                    </div>
+
                 </div>
-                <div id="chat" class="panel-collapse collapse in">
-                    <div>
-                    <div class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="text-center text-muted small">January 1, 2014 at 12:23 PM</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="media">
-                                    <a class="pull-left" href="#">
+                <div class="container bootstrap snippet">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+                            <div class="portlet portlet-default">
+                                <div class="portlet-heading">
+                                    <div class="portlet-title">
+                                        <h4><i class="fa fa-circle text-green"></i> khdcds</h4>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div id="chat" class="panel-collapse collapse in">
+                                    <div>
+                                        <div class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <p class="text-center text-muted small">January 1, 2014 at 12:23 PM</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="media">
+                                                        <a class="pull-left" href="#">
                                         <img class="media-object img-circle" src="" alt="">
                                     </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Anonymous
-                                            <span class="small pull-right">12:23 PM</span>
-                                        </h4>
-                                        <p>'Comment'</p>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Anonymous
+                                                                <span class="small pull-right">12:23 PM</span>
+                                                            </h4>
+                                                            <p>'Comment'</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="media">
+                                                        <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Anonymous
+                                                                <span class="small pull-right">12:28 PM</span>
+                                                            </h4>
+                                                            <p>'reply'</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="media">
+                                                        <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="" alt="">
+                                    </a>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Anonymous
+                                                                <span class="small pull-right">12:39 PM</span>
+                                                            </h4>
+                                                            <p>'reply'</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-footer">
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Enter message..." style="width:500px;height:100px" :></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-default pull-right">Send</button>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="media">
-                                    <a class="pull-left" href="#">
-                                        <img class="media-object img-circle" src="" alt="">
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Anonymous
-                                            <span class="small pull-right">12:28 PM</span>
-                                        </h4>
-                                        <p>'reply'</p>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="media">
-                                    <a class="pull-left" href="#">
-                                        <img class="media-object img-circle" src="" alt="">
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Anonymous
-                                            <span class="small pull-right">12:39 PM</span>
-                                        </h4>
-                                        <p>'reply'</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                    </div>
-                    <div class="portlet-footer">
-                        <form role="form">
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Enter message..." style="width:500px;height:100px":></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="button" class="btn btn-default pull-right">Send</button>
-                                <div class="clearfix"></div>
-                            </div>
-                        </form>
+                        <!-- /.col-md-4 -->
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- /.col-md-4 -->
-    </div>
-</div>  
-      
-<script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
 
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-var coll = document.getElementsByClassName("collapsible");
-var i;
+                <script>
+                    // Script to open and close sidebar
+                    function w3_open() {
+                        document.getElementById("mySidebar").style.display = "block";
+                        document.getElementById("myOverlay").style.display = "block";
+                    }
 
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}
-  
-   
-</script>
-     
+                    function w3_close() {
+                        document.getElementById("mySidebar").style.display = "none";
+                        document.getElementById("myOverlay").style.display = "none";
+                    }
 
-      
+                    // Modal Image Gallery
+                    function onClick(element) {
+                        document.getElementById("img01").src = element.src;
+                        document.getElementById("modal01").style.display = "block";
+                        var captionText = document.getElementById("caption");
+                        captionText.innerHTML = element.alt;
+                    }
+                    var coll = document.getElementsByClassName("collapsible");
+                    var i;
+
+                    for (i = 0; i < coll.length; i++) {
+                        coll[i].addEventListener("click", function() {
+                            this.classList.toggle("active");
+                            var content = this.nextElementSibling;
+                            if (content.style.display === "block") {
+                                content.style.display = "none";
+                            } else {
+                                content.style.display = "block";
+                            }
+                        });
+                    }
+
+                </script>
+
+
+
 </body>
+
 </html>
